@@ -1,7 +1,6 @@
 import React from "react";
 
-function Card({ userName, btnText }) {
-  console.log(userName);
+function Card({ userName = "UserName", btnText = "Clickme" }) {
   return (
     <>
       <div className="relative h-[400px] w-[300px] rounded-md mb-5">

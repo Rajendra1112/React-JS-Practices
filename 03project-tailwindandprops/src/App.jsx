@@ -9,12 +9,14 @@ function App() {
 
   return (
     <>
-      <h1 className="bg-slate-100 text-black p-10 rounded-xl mb-5">
+      <h1 className="bg-red-200 text-black p-10 rounded-md mb-5">
         tailwindtest
       </h1>
 
       <Card userName="rajendra" btnText="click me" />
       <Card userName="thapa" btnText="visit here" />
+      <Card />
+      <Card btnText="read more" />
     </>
   );
 }
