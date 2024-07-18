@@ -1,4 +1,4 @@
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 import "./App.css";
 
@@ -23,24 +23,49 @@ function App() {
     setPassword(psw);
   }, [length, numberAllowed, charAllowed, setPassword]);
 
+  useEffect(() => {
+    passwordGenerator();
+  }, [length, numberAllowed, charAllowed, passwordGenerator]);
+
+  // useRef hook
+  let passwordRef = useRef(null);
+
+  // function to copy password to clipboard
+  const copyPasswordToClipboard = useCallback(() => {
+    // to select whole pasaword
+    passwordRef.current?.select();
+
+    // to select range of password
+    // passwordRef.current?.setSelectionRange(0, 4);
+
+    // to copy password and write in clipboard
+    window.navigator.clipboard.writeText(password);
+  }, [password]);
+
   return (
     <>
-      {/* outer div */}
+      {/* main outer div */}
       <div className="rounded-md bg-gray-800 p-5 w-3/4 m-auto my-5 text-white">
         <h1 className="text-2xl text-center text-white">Password Generator</h1>
         {/* outer div for input field and copy button */}
-        <div className="flex my-5 rounded-md overflow-hidden">
+        <div className="flex my-5 rounded-md overflow-hidden text-xl">
           <input
-            className="p-2 outline-none w-3/4 "
+            className="p-2 outline-none w-3/4 text-black"
             type="text"
             value={password}
             placeholder="Password"
             readOnly
+            ref={passwordRef}
           />
-          <button className="bg-blue-600 p-2 text-white w-1/4">Copy</button>
+          <button
+            className="bg-blue-600 p-2 text-white w-1/4"
+            onClick={copyPasswordToClipboard}
+          >
+            Copy
+          </button>
         </div>
         {/* outer div for dependencies */}
-        <div className="flex justify-between">
+        <div className="flex gap-x-10 text-xl">
           {/* outer div for range of value */}
           <div className="flex gap-x-2">
             <input
@@ -62,7 +87,7 @@ function App() {
                 type="checkbox"
                 id="number-checkbox"
                 defaultChecked={numberAllowed}
-                onClick={() => {
+                onChange={() => {
                   setNumberAllowed((prev) => !prev);
                 }}
               />
