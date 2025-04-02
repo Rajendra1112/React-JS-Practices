@@ -1,0 +1,21 @@
+.nav_bar {
+  height: 72px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 72px;
+}
+
+.nav_bar ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+.nav_item a {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 18px;
+  color: black;
+}

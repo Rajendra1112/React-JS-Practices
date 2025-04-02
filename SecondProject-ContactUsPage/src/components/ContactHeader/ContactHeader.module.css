@@ -1,0 +1,10 @@
+.contact_header_section h1 {
+  font-size: 48px;
+  font-weight: 800;
+  margin-bottom: 5px;
+}
+
+.contact_header_section p {
+  font-weight: 500;
+  color: gray;
+}

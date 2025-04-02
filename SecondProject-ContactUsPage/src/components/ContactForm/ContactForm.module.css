@@ -1,0 +1,63 @@
+.container {
+  max-width: 1270px;
+  margin: 0 auto;
+  padding: 72px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+}
+
+.top_buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 32px;
+}
+
+.contact_form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.contact_form form {
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form_control {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: relative;
+}
+
+.form_control label {
+  position: absolute;
+  top: -12px;
+  left: 10px;
+  padding: 0 8px;
+  font-size: 16px;
+  font-weight: 600;
+  background-color: white;
+  cursor: pointer;
+}
+
+.form_control input,
+textarea {
+  font-size: 16px;
+  font-weight: 600;
+  outline: none;
+  border: 1px solid black;
+}
+
+.form_control input {
+  padding: 5px 10px;
+  height: 40px;
+}
+
+.form_control textarea {
+  padding: 10px;
+}
